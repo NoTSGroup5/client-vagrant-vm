@@ -4,20 +4,6 @@
 - name: Copy connection.json to the appropiate location
   template: src=connection.j2 dest=/home/ubuntu/.composer-connection-profiles/defaultProfile/connection.json
 
-- name: Git pull proof of concept business network definition
-  git:
-    repo: 'https://github.com/NoTSGroup5/BusinessNetworkDefinition.git'
-    dest: '/home/ubuntu/businessNetworkDefinition'
-  become: true
-  become_user: ubuntu
-
-- name: Install packages based on package.json for businessNetworkDefinition.
-  npm:
-    path: /home/ubuntu/businessNetworkDefinition/EPD
-    state: latest
-  become: true
-  become_user: ubuntu
-
 - name: Git pull proof of concept electron app
   git:
     repo: 'https://github.com/NoTSGroup5/Electron-app.git'

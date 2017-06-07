@@ -1,17 +1,13 @@
 {
-    "type": "hlfv1",
+   "type": "hlfv1",
     "orderers": [
-        "grpc://localhost:7050"
+        "grpc://192.168.0.2:7050"
     ],
-    "ca": "https://localhost:7054",
+    "ca": "https://192.168.0.2:7054",
     "peers": [
         {
-            "requestURL": "grpc://localhost:7051",
-            "eventURL": "grpc://localhost:7053"
-        },
-        {
-            "requestURL": "grpc://localhost:7056",
-            "eventURL": "grpc://localhost:7058"
+            "requestURL": "grpc://192.168.0.2:7056",
+            "eventURL": "grpc://192.168.0.2:7058"
         }
     ],
     "keyValStore": "/home/ubuntu/.hfc-key-store",
