@@ -1,8 +1,12 @@
 - name: Creates directory for businessNetwork connection profile
   file: path=/home/ubuntu/.composer-connection-profiles/defaultProfile state=directory
+  become: true
+  become_user: ubuntu
 
 - name: Copy connection.json to the appropiate location
   template: src=connection.j2 dest=/home/ubuntu/.composer-connection-profiles/defaultProfile/connection.json
+  become: true
+  become_user: ubuntu
 
 - name: Git pull proof of concept electron app
   git:
